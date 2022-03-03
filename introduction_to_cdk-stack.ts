@@ -1,36 +1,47 @@
-import {
-        Stack,
-        StackProps,
-        aws_lambda as lambda,
-        aws_dynamodb as ddb,
-        aws_dynamodb,
+import { 
+  Stack, 
+  StackProps,
+  RemovalPolicy,
+  aws_lambda as lambda, 
+  aws_iam as iam,
+  aws_dynamodb as ddb,
+  aws_s3 as s3,
+  aws_dynamodb,
 } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import path = require('path');
 
-export class IntrocutionToCdkStack extends Stack {
+export class IntroductionToCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
     const ddbUsersTable = new ddb.Table(this, 'Users', {
-            tableName: 'users',
-            partitionKey: {
-                    name: 'uid',
-                    type: aws_dynamodb.AttributeType.STRING
-            }
-    })
+      tableName: 'users',
+      //default is RETAIN, so not delete when "cdk destroy" runs:
+      removalPolicy: RemovalPolicy.DESTROY,
+      partitionKey: {
+        name: 'uid',
+        type: aws_dynamodb.AttributeType.STRING
+      }
+    });
 
-    //https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda-readme.html
-    const fn = new lambda.Function(this,'IntroductionToCdkFunction',{
-            //runtime: lambda.Runtime.PROVIDED_AL2,
-            runtime: lambda.Runtime.NODEJS_12_X,
-            handler: 'index.handler',
-            code: lambda.Code.fromAsset(
-                    './Lambda-NodeJS14-default.zip'
-            ),
-            architecture: lambda.Architecture.X86_64,
-    })
+    const fn = new lambda.Function(this, 'IntroductionToCdkFunction', {
+      runtime: lambda.Runtime.NODEJS_14_X,
+      functionName: 'IntroCDKv2',
+      handler: 'index.handler',
+      //see https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.Function.html:
+      //code: lambda.Code.fromInline(`exports.handler = handler.toString()`)
+      //see https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.InlineCode.html:
+      code: lambda.Code.fromAsset(path.join(__dirname, '../assets')),//OK
+      //code: lambda.Code.fromAsset(
+        //'/home/ec2-user/environment/IntroductionToCDK/assets/Lambda-NodeJS14-default.zip'//OK
+        //'/home/ec2-user/environment/IntroductionToCDK/assets'//OK
+        
+      //),
+      architecture: lambda.Architecture.X86_64
+    });
 
+    ddbUsersTable.grantReadData(fn)
     ddbUsersTable.grantWriteData(fn)
   }
 }
