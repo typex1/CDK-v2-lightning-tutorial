@@ -30,7 +30,7 @@ I made the following improvments to the code:
 
 What you can do to understand the power of CDK better:
 
-* In the stack file, change the name of the Lambda function. Do a ```**cdk diff**``` - you see CDK detects the change.
+* In the stack file, change the name of the Lambda function. Do a **```cdk diff```** - you see CDK detects the change.
 * Now do a CDK deploy. You can lean back and see all necessary steps done - be aware that a Lambda function cannot have its name changed - instead, the whole function is re-created, along with its persmissions etc.
 * Make a change to the Lambda code in assets/index.js - maybe by just adding a blank somewhere. "cdk diff" tells you that CDK is aware of this change.
 * A ```cdk deploy``` will deploy the change.
