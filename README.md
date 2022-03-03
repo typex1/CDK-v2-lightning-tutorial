@@ -17,7 +17,7 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * Do a **cdk ls** to check if all code is valid
 * Do a **cdk deploy** to do a first deployment, but no specific resources will be deployed.
 * If you like, make the adaptions to **lib/introduction_to_cdk-stack.ts** by using the one of this repo.
-* Make sure to ```mkdir assets/ folder and put the index.js from this repo, see details below.
+* Make sure to ```mkdir assets/``` folder and put the index.js from this repo, see details below.
 
 I made the following improvments to the code:
 
