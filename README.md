@@ -25,7 +25,7 @@ I made the following improvments to the code:
 * The stack file now also includes Write AND Read permissions for the Lambda function to the DynamoDB table **users**
 * The Lambda function now gets a specific name "IntroCDKv2" instead of that random CDK-type name.
 * The stack file does no longer import a Lambda zip file, but instead every file under the ```assets/``` folder is imported - better for quick code changes!
-* TO DO for you: after "cdk init", create an ```asset/``` folder in your project (same level as ```/lib``` folder), then put the ```assets/index.js``` from this repo in there.
+* TO DO for you: create an ```asset/``` folder in your project (same level as ```/lib``` folder), then put the ```assets/index.js``` from this repo in there.
 * The Lambda code does a simple get request to the users table, just to prove that read access is granted.
 
 What you can do to understand the power of CDK better:
