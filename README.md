@@ -7,7 +7,7 @@ By using this content to can more easily benefit from the video because you do n
 
 As a quick repetition, these are the preliminary steps mentioned in the video:
 
-![CDK Architecture Image](./img/CDK-Lambda-DynamoDB.png)
+![CDK Architecture Image](./img/CDK-Lambda-DynamoDB.png | width=400)
 
 * Elements to be created: a DynamoDB table named "users" and a Lambda function with permission to write to that table.
 * **Install NodeJS** if not already available (see https://nodejs.dev/learn/how-to-install-nodejs)
