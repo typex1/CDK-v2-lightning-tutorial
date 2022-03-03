@@ -10,7 +10,8 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * Elements to be created: a DynamoDB table named "users" and a Lambda function with permission to write to that table.
 * **Install NodeJS** if not already available (see https://nodejs.dev/learn/how-to-install-nodejs)
 * Perform a "cdk bootstrap" if you never ran CDK in the current region.
-* Install latest version (2.x) of CDK **npm install -g aws-cdk**
+* Install latest version (2.x) of CDK 
+  ```npm install -g aws-cdk```
 * Create and cd into project folder: **mkdir IntroductionToCDK && cd IntroductionToCDK**
 * Initialize/polulate the project: **cdk init --language typescript**
 * most important file created is **lib/introduction_to_cdk-stack.ts** - this contains the CDK stack class!
