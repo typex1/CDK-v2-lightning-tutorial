@@ -9,9 +9,9 @@ I made the following improvments to the code:
 
 * The stack file **introduction_to_cdk-stack.ts** now also contains a table removal policy DESTROY, i.e. when initiating "cdk destroy", the table is also deleted.
 * The stack file now also includes Write AND Read permissions for the Lambda function to the DynamoDB table **users**
-* The stack file does no longer import a Lambda zip file, but instead every file under the **assets/** folder.
+* The stack file does no longer import a Lambda zip file, but instead every file under the **assets/** folder is imported - better for quick code changes!
 * TO DO for you: after "cdk init", create an asset/ folder in your project (same level as /lib folder), then put assets/index.js from this repo in there
-* The Lambda code does a simple get request to the users table, just to prove that read access is granted
+* The Lambda code does a simple get request to the users table, just to prove that read access is granted.
 
 What you can do to understand the power of CDK better:
 
