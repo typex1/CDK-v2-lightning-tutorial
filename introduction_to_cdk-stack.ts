@@ -29,15 +29,8 @@ export class IntroductionToCdkStack extends Stack {
       runtime: lambda.Runtime.NODEJS_14_X,
       functionName: 'IntroCDKv2',
       handler: 'index.handler',
-      //see https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.Function.html:
-      //code: lambda.Code.fromInline(`exports.handler = handler.toString()`)
       //see https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.InlineCode.html:
-      code: lambda.Code.fromAsset(path.join(__dirname, '../assets')),//OK
-      //code: lambda.Code.fromAsset(
-        //'/home/ec2-user/environment/IntroductionToCDK/assets/Lambda-NodeJS14-default.zip'//OK
-        //'/home/ec2-user/environment/IntroductionToCDK/assets'//OK
-        
-      //),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../assets')),
       architecture: lambda.Architecture.X86_64
     });
 
