@@ -13,12 +13,13 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * **Install NodeJS** if not already available (see https://nodejs.dev/learn/how-to-install-nodejs)
 * Perform a ```cdk bootstrap``` if you never ran CDK in the current region and get an error like **...Please run 'cdk bootstrap'...**.
 * Install latest version (2.x) of CDK ```npm install -g aws-cdk```
-* Create and cd into project folder:  
+* Create and cd into project folder,
+* Initialize the project:  
     ```
-    mkdir IntroductionToCDK && cd IntroductionToCDK
+    mkdir IntroductionToCDK
+    cd IntroductionToCDK
     cdk init --language typescript
     ```
-* Initialize/polulate the project: ```cdk init --language typescript```
 * most important file created is **lib/introduction_to_cdk-stack.ts** - this contains the CDK stack class!
 * Do a ```cdk ls``` to check if all code is valid
 * Do a ```cdk deploy``` to do a first deployment, but no specific resources will be deployed.
