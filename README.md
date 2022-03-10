@@ -13,7 +13,8 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * **Install NodeJS** if not already available (see https://nodejs.dev/learn/how-to-install-nodejs)
 * Perform a ```cdk bootstrap``` if you never ran CDK in the current region and get an error like **...Please run 'cdk bootstrap'...**.
 * Install latest version (2.x) of CDK ```npm install -g aws-cdk```
-* Create and cd into project folder:  ```mkdir IntroductionToCDK && cd IntroductionToCDK```
+* Create and cd into project folder:  
+  ```mkdir IntroductionToCDK && cd IntroductionToCDK```
 * Initialize/polulate the project: ```cdk init --language typescript```
 * most important file created is **lib/introduction_to_cdk-stack.ts** - this contains the CDK stack class!
 * Do a ```cdk ls``` to check if all code is valid
@@ -33,7 +34,7 @@ I made the following improvments to the code:
 What you can do to understand the power of CDK better:
 
 * In the stack file, change the name of the Lambda function. Do a ```cdk diff``` - you see CDK detects the change.
-* Now do a ```cdl deploy. You can lean back and see all necessary steps done - be aware that a Lambda function cannot have its name changed - instead, the whole function is re-created, along with its persmissions etc.
+* Now do a ```cdl deploy```. You can lean back and see all necessary steps done - be aware that a Lambda function cannot have its name changed - instead, the whole function is re-created, along with its persmissions etc.
 * Make a change to the Lambda code in assets/index.js - maybe by just adding a blank somewhere. ```cdk diff``` tells you that CDK is aware of this change.
 * Put an additional file in the assets/ folder. E.g. just invoke "date > assets/text.txt". ```cdk diff``` sees it, ```cdk deploy``` will do all the needed steps: zipping all files, pushing them to the Lambda function content.
-* Make a change in the Lambda code using the AWS Management Console, deploy the change. Do a ```cdk diff```. You see: CDK cannot detect this change, as it is not reflected in the visible artifacts. Be aware that the next ```cdk deploy``` will wipe your manual Lambda code chages!
+* Make a change in the Lambda code using the AWS Management Console, deploy the change. Do a ```cdk diff```. You see: CDK cannot detect this change, as it is not reflected in the visible artifacts. Be aware that the next ```cdk deploy``` will wipe your manual Lambda code changes!
