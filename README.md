@@ -23,8 +23,19 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * most important file created is **lib/introduction_to_cdk-stack.ts** - this contains the CDK stack class!
 * Do a ```cdk ls``` to check if all code is valid
 * Do a ```cdk deploy``` to do a first deployment, but no specific resources will be deployed.
-* If you like, make the adaptions to **lib/introduction_to_cdk-stack.ts** by using the one of this repo.
-* Make sure to ```mkdir assets/``` folder and put the index.js from this repo, see details below.
+* If you like, make the adaptions to **lib/introduction_to_cdk-stack.ts** by using the one of this repo:
+    ```
+    cd lib
+    wget https://raw.githubusercontent.com/typex1/CDK-v2-lightning-tutorial/main/introduction_to_cdk-stack.ts
+    cd ..
+    ```
+* Make sure to ```mkdir assets/``` folder and put the index.js from this repo, see details below:
+    ```
+    mkdir assets
+    cd assets
+    wget https://raw.githubusercontent.com/typex1/CDK-v2-lightning-tutorial/main/assets/index.js
+    cd ..
+    ```
 
 I made the following improvments to the code:
 
