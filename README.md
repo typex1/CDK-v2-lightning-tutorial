@@ -11,8 +11,8 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 
 * Elements to be created: a DynamoDB table named "users" and a Lambda function with permission to write to that table.
 * **Install NodeJS** if not already available (see https://nodejs.dev/learn/how-to-install-nodejs)
-* Perform a ```cdk bootstrap``` if you never ran CDK in the current region and get an error like **...Please run 'cdk bootstrap'...**.
 * Install latest version (2.x) of CDK ```npm install -g aws-cdk```
+* Perform a ```cdk bootstrap``` if you never ran CDK in the current region and get an error like **...Please run 'cdk bootstrap'...**.
 * Create and cd into project folder,
 * Initialize the project:  
     ```
