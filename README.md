@@ -3,7 +3,7 @@ Creating a simple CDK v2 project deploying a Lambda function and a DynamoDB tabl
 
 This project adds some content to the great tutorial presented on Youtube: https://www.youtube.com/watch?v=G8yWsLDrYtY.
 
-By using this content to can more easily benefit from the video because you do not have to manually type the stack file **introduction_to_cdk-stack.ts** from this repo.
+By using this content to can more easily benefit from the video because you do not have to manually type the stack file **introduction_to_cdk-stack.ts** from the video.
 
 As a quick repetition, these are the preliminary steps mentioned in the video:
 
