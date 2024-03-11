@@ -26,7 +26,7 @@ export class IntroductionToCdkStack extends Stack {
     });
 
     const fn = new lambda.Function(this, 'IntroductionToCdkFunction', {
-      runtime: lambda.Runtime.NODEJS_14_X,
+      runtime: lambda.Runtime.NODEJS_20_X,
       functionName: 'IntroCDKv2',
       handler: 'index.handler',
       //see https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda.InlineCode.html:
