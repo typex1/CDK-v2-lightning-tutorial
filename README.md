@@ -26,6 +26,7 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
 * If you like, make the adaptions to **lib/introduction_to_cdk-stack.ts** by using the one of this repo:
     ```
     cd lib
+    mv introduction_to_cdk-stack.ts introduction_to_cdk-stack_old.ts
     wget https://raw.githubusercontent.com/typex1/CDK-v2-lightning-tutorial/main/introduction_to_cdk-stack.ts
     cd ..
     ```
