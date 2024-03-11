@@ -29,6 +29,7 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
     mv introduction_to_cdk-stack.ts introduction_to_cdk-stack_old.ts
     wget https://raw.githubusercontent.com/typex1/CDK-v2-lightning-tutorial/main/introduction_to_cdk-stack.ts
     cd ..
+    
     ```
 * Make sure to ```mkdir assets/``` folder and put the index.js from this repo, see details below:
     ```
@@ -36,7 +37,12 @@ As a quick repetition, these are the preliminary steps mentioned in the video:
     cd assets
     wget https://raw.githubusercontent.com/typex1/CDK-v2-lightning-tutorial/main/assets/index.js
     cd ..
+    
     ```
+* Now you can deploy again:
+   ```
+    cdk deploy
+   ```
 
 I made the following improvements to the code:
 
@@ -54,3 +60,8 @@ What you can do to understand the power of CDK better:
 * Make a change to the Lambda code in assets/index.js - maybe by just adding a blank somewhere. ```cdk diff``` tells you that CDK is aware of this change.
 * Put an additional file in the assets/ folder. E.g. just invoke "date > assets/text.txt". ```cdk diff``` sees it, ```cdk deploy``` will do all the needed steps: zipping all files, pushing them to the Lambda function content.
 * Make a change in the Lambda code using the AWS Management Console, deploy the change. Do a ```cdk diff```. You see: **CDK cannot detect this change**, as it is not reflected in the visible artifacts. Be aware that the next ```cdk deploy``` will wipe your manual Lambda code changes!
+
+Cleaning up is easy - to remove all resources (apart from the CDK code), just perform
+ ```
+cdk destroy
+```
